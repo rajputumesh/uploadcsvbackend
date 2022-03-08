@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="row py-5">
+        <div class="col-12">
+            <p><%= msg %></p>
+        </div>
+        <div class="col-4">
+            <div class="p-3 table-bordered">
+                <p><b>Upload Score File <span class="text-danger"> (Note - only .csv)</span></b></p>
+                <form action="/upload/score" method="post" enctype="multipart/form-data" >
+                    <div class="form-group">
+                        <label for="score">Score file</label>
+                        <input type="file" class="form-control" id="score" placeholder="Enter password" name="score">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="p-3 table-bordered">
+                <p><b>Upload fielding File <span class="text-danger"> (Note - only .csv)</span></b></p>
+                <form action="/upload/fielding" method="post" enctype="multipart/form-data" >
+                    <div class="form-group">
+                        <label for="fielding">Fielding file</label>
+                        <input type="file" class="form-control" id="fielding" placeholder="Enter password" name="fielding">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="p-3 table-bordered">
+                <p><b>Upload batting File <span class="text-danger"> (Note - only .csv)</span></b></p>
+                <form action="/upload/batting" method="post" enctype="multipart/form-data" >
+                    <div class="form-group">
+                        <label for="batting">Batting file</label>
+                        <input type="file" class="form-control" id="batting" placeholder="Enter password" name="batting">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
