@@ -24,12 +24,13 @@ const uploadBatting = (req, res) =>{
     fs.createReadStream('./uploads/'+filename)
     .pipe(csv({}))
     .on('data', async (data) => {
-        //console.log(data);
+        //console.log('data = ',data);
         let batting = new Batting(data);
         await batting.save();
     })
     .on('end',async () =>{
-        res.redirect('/');
+        var string = encodeURIComponent('Upload Successfully');
+        res.redirect('/?msg='+string);
     });
 }
 
@@ -42,7 +43,8 @@ const uploadFielding = (req, res) =>{
         await fielding.save();
     })
     .on('end',async () =>{
-        res.redirect('/');
+        var string = encodeURIComponent('Upload Successfully');
+        res.redirect('/?msg='+string);
     });
 }
 

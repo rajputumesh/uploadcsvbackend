@@ -5,28 +5,22 @@ const Fielding = require('../../db/Fielding');
 
 const getscore = (req, res) => {
     Score.find(function (err, scores) {
-        res.status(301).json({
-            message:"",
-            scores:scores
-        });
+        console.log(scores);
+        res.status(200).json(scores); 
     });
 }
-
+ 
 const getbatting = (req, res) => {
     Batting.find(function (err, battings) {
-        res.status(301).json({
-            message:"",
-            battings:battings
-        });
+        console.log(battings);
+        res.status(200).json(battings);
     });
 }
 
 const getfielding = (req, res) => {
     Fielding.find(function (err, fieldings) {
-        res.status(301).json({
-            message:"",
-            fieldings:fieldings
-        });
+        console.log(fieldings);
+        res.status(200).json(fieldings);
     });
 }
 module.exports = {
